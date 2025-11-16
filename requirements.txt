@@ -1,7 +1,7 @@
 alembic==1.13.1
 azure-common==1.1.28
 azure-nspkg==3.0.2
-azure-storage==12.19.1 # Legacy; consider upgrading to azure-storage-blob if needed
+azure-storage-blob==12.19.1 # Legacy; consider upgrading to azure-storage-blob if needed
 certifi==2023.11.17
 cffi==1.16.0
 chardet==5.2.0
