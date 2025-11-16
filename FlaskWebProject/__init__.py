@@ -3,18 +3,21 @@ The flask application package.
 """
 import logging
 from flask import Flask
-from config import Config
+from FlaskWebProject.config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_session import Session
+from flask.logging import create_logger
 
 app = Flask(__name__)
 app.config.from_object(Config)
 # TODO: Add any logging levels and handlers with app.logger
-app.logger.setLevel(logging.WARNING)
+# DONE (Note: Instructor's original app.logger code not pylint compliant)
+LOG = create_logger(app)
+LOG.setLevel(logging.INFO)
 streamHandler = logging.StreamHandler()
-streamHandler.setLevel(logging.WARNING)
-app.logger.addHandler(streamHandler) # add stream handler to app.logger object
+streamHandler.setLevel(logging.INFO)
+LOG.addHandler(streamHandler)
 
 Session(app)
 db = SQLAlchemy(app)

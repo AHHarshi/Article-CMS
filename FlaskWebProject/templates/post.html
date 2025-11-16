@@ -14,13 +14,6 @@
                 {% endfor %}
             </p>
             <p>
-                {{ form.sub_title.label }} (optional)<br>
-                {{ form.sub_title(size=64) }}
-                {% for error in form.sub_title.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-                {% endfor %}
-            </p>
-            <p>
                 {{ form.author.label }}<br>
                 {{ form.author(size=32) }}
                 {% for error in form.author.errors %}
@@ -39,10 +32,6 @@
         <div class="col-sm-4">
             {% if form.image_path.data %}
             <p><img src="{{ imageSource + form.image_path.data }}" width="250" height="250" /></p>
-            <p>
-                {{ form.remove_image_path.label }}
-                {{ form.remove_image_path() }}
-            </p>
             {% endif %}
             <p>
                 {{ form.image_path.label }}<br>
